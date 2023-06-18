@@ -1,3 +1,13 @@
+"""
+DESARROLLADORES:
+    - LUIS ANGEL LOPEZ ALVAREZ
+    - JESUS SAYEB PEREZ REYES
+    
+PROYECTO DE ALGORITMOS BIOINSPIRADOS - HIBRIDO PSO - GA
+
+MODULO PRINCIPAL DE EJECUCION
+"""
+#Comenzamos importando los modulos necesarios
 import funciones_objetivo
 import hibrido
 

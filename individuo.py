@@ -37,6 +37,8 @@ class Cromosoma:
         self.intervalo = intervalo      #Intervalo de los valores de solución de la funcion objetivo
         self.dimensiones = dimensiones  #Numero de dimensiones del problema
 
+        pass
+
     #FUNCION DE INICIALIZACION DEL INDIVIDUO
     def randomInitialization(self):
         
@@ -99,10 +101,12 @@ class Cromosoma:
     #Funcion que simplemente asigna el valor recibido al fitness del objeto
     def setFitness(self, value):
         self.fitness = value
+        pass
         
     #Funcion que recibe la funcion objetivo como parametro y asigna la aptitud del vector solucion al fitness
     def evaluateFunction(self, function):
         self.fitness = function(self.vector_solution)
+        pass
     
     #Función para mostrar los detalles del objeto cuando sea necesario
     def printCromosoma(self):
@@ -110,6 +114,7 @@ class Cromosoma:
               + f"Vector solucion {self.vector_solution} \n"
               + f"Fitness {self.fitness}\n"
               + f"Velocidad {self.velocidad}")
+        pass
         
     #Funcion que ajusta los valores del vector solucion para verificar que no supere los limites definidos
     def ajustarValores(self):
@@ -119,6 +124,8 @@ class Cromosoma:
         self.vector_solution = ajust.repair_solution(self.vector_solution, self.intervalo)
         #Codificamos la salida para reemplazar la anterior cadena binaria
         self.encode()
+        
+        pass
     
     #Funcion de PSO para actualizar la velocidad y la posicion de la particula
     def update_position(self, w, c1, c2, gBest):
