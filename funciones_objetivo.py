@@ -9,6 +9,9 @@ MODULO: FUNCIONES OBJETIVO
 """
 #Comenzamos importando las librerías necesarias
 import numpy as np
+import math
+from functools import reduce
+from operator import mul
 
 #Definimos nuestra funcion Ackley
 def ackleyFunction(x):
@@ -27,6 +30,26 @@ def ackleyFunction(x):
     result = term1 + term2 + a + np.exp(1)
     
     #Retornamos el valor con una precision de 3 decimales
+    return round(result, 3)
+
+def rastrigin(vector):
+    n = len(vector)
+    A = 10
+    sum = 0
+
+    for i in range(n):
+        x = vector[i]
+        sum += x**2 - A * math.cos(2 * math.pi * x)
+
+    new_r = A * n + sum
+    
+    return round(new_r,3)
+
+def griewang(vector):
+    n = len(vector)
+    sum_sq = sum([(x ** 2) / 4000 for x in vector])
+    prod_cos = reduce(mul, [math.cos(x / math.sqrt(i+1)) for i, x in enumerate(vector)])
+    result = 1 + sum_sq - prod_cos
     return round(result, 3)
 
 #Definimos nuestra función rosenbrock
