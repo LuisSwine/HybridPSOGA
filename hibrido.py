@@ -32,8 +32,21 @@ def particulas_geneticas(tam_poblacion, dimensiones, intervalo, funcion, w, c1, 
     #Inicializamos nuestro contador de generaciones
     generacion = 0
     
+    hitorial_mejores = []
+    historial_peores = []
+    historial_promedio = []
+    
+    mejor = swarm.getBest()
+    peor = swarm.getWorst()
+    promedio = swarm.getProm()
+    
+    hitorial_mejores.append(mejor.fitness)
+    historial_peores.append(peor.fitness)
+    historial_promedio.append(promedio)
+    
+    
     #PASO 2: COMENZAMOS CON LAS ITERACIONES HASTA EL CRITERIOR DE PARO
-    while mejor_inidividuo.fitness > 0.001:
+    while mejor_inidividuo.fitness > 0.001 or generacion > 10000:
         
         #Imprimimos la generacion en la que se encuentra el agoritmo
         print(f"Generacion: {generacion}")
@@ -116,7 +129,14 @@ def particulas_geneticas(tam_poblacion, dimensiones, intervalo, funcion, w, c1, 
         #SELECCIONAMOS A LOS SOBREVIVIENTES CON EL RESPECTIVO MODULO
         swarm.poblacion = ss.seleccion_por_extincion(swarm.poblacion, tam_poblacion)
         
-    #Mostramos al mejor individuo de la población
-    mejor_inidividuo.printCromosoma()
+        mejor = swarm.getBest()
+        peor = swarm.getWorst()
+        promedio = swarm.getProm()
+        
+        hitorial_mejores.append(mejor.fitness)
+        historial_peores.append(peor.fitness)
+        historial_promedio.append(promedio)
     
-    pass
+    return generacion, mejor.fitness, peor.fitness, promedio, mejor.vector_solution, hitorial_mejores, historial_peores, historial_promedio
+    
+    
