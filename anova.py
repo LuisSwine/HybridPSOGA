@@ -15,7 +15,7 @@ def run_anova(prefijo, dimensiones, intervalo, funcion, tam_poblacion, w, c1, c2
         archivo = open(ruta_archivo, 'a')
         generacion, mejor, peor, promedio, vector_mejor, historial_mejores, historial_peores, historial_promedio = hibrido.particulas_geneticas(tam_poblacion,dimensiones, intervalo,funcion,w,c1,c2,prob_cruza,prob_mutacion)
     
-        texto = f"\n{i+4},{generacion},{mejor},{peor},{promedio},'{vector_mejor}'"
+        texto = f"\n{i+1},{generacion},{mejor},{peor},{promedio},'{vector_mejor}'"
         
         archivo.write(texto)
         archivo.close()
@@ -33,7 +33,7 @@ def run_anova(prefijo, dimensiones, intervalo, funcion, tam_poblacion, w, c1, c2
         plt.title('Resultados del algoritmo genético')
         plt.legend()
 
-        ruta = prefijo + str(i+4) + '.png'
+        ruta = prefijo + str(i+1) + '.png'
         plt.savefig(ruta)
     
     pass

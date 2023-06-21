@@ -46,7 +46,7 @@ def particulas_geneticas(tam_poblacion, dimensiones, intervalo, funcion, w, c1, 
     
     
     #PASO 2: COMENZAMOS CON LAS ITERACIONES HASTA EL CRITERIOR DE PARO
-    while mejor_inidividuo.fitness > 0.001 or generacion > 10000:
+    while mejor_inidividuo.fitness > 0.001 or generacion < 10000:
         
         #Imprimimos la generacion en la que se encuentra el agoritmo
         print(f"Generacion: {generacion}")
