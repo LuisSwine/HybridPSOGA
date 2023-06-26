@@ -14,6 +14,7 @@ El algoritmo propuesto busca explotar las virtudes de ambos algoritmos para pode
 ### LIBRERIAS Y DEPENDENCIAS
 
 ![Esta es una imagen de ejemplo](https://img.shields.io/badge/numpy-1.23.5-blue)
+![Esta es una imagen de ejemplo](https://img.shields.io/badge/matplotlib-3.5.3-blue)
 ![Esta es una imagen de ejemplo](https://img.shields.io/badge/random-8A2BE2)
 ![Esta es una imagen de ejemplo](https://img.shields.io/badge/math-8A2BE2)
 ![Esta es una imagen de ejemplo](https://img.shields.io/badge/functools-8A2BE2)
@@ -36,11 +37,18 @@ El algoritmo propuesto busca explotar las virtudes de ambos algoritmos para pode
 6. Módulo de Reparación (reparation_mod.py): Este módulo es el encargado de verificar que los valores de un vector solución no sobrepasen los límites del intervalo definido para la optimización, lee cada valor y lo ajusta al valor límite en caso de un excedente. 
 7. Módulo de Selección de Sobrevivientes (survivors_selection.py): En este módulo se programó el método de selección de sobrevivientes conocido cómo elitísmo donde unícamente sobreviven los n mejores individvuos donde n es el tamaño de población.
 8. Módulo de Hibrido (hibrido.py): Este es el módulo principal donde se programa de manera general el algoritmo. En el método 'particulas_geneticas' tenemos toda la implementacion de la lógica detrás del híbrido propuesto.
-9. Módulo Main (main.py): Es el módulo de ejecución donde se establecen los parametros del algoritmo y la función a optimizar (minimizar)
+9. Módulo Main (main.py): Es el módulo de ejecución donde se establecen los parametros del algoritmo y la función a optimizar (minimizar).
+10. Módulo Anova (anova.py): Es un módulo diseñado para realizar múltiples ejecuciones del algoritmo y guardar los resultados y gráficas en una carpeta objetivo que se especifica en la variable prefijo.
 
 #### EJECUCIÓN DEL PROGRAMA
-Para poder ejecutar el programa:
+Para poder ejecutar el programa en modo aislado:
 1. Primero, descargamos el proyecto de GitHub y lo abrímos en un IDE. 
 2. Verficamos tener las librerías y dependencías necesarias, se recomienda utilizar un entorno virtual con conda. 
 3. Abrir el módulo main y configurar los parametros necesarios. 
 4. Ejecutar main.py
+
+Para ejecutar el programa en modo anova:
+1. Se descarga el proyecto del repositorio y se abre con un IDE, se recomienda VisualStudio Code
+2. Verificamos tener las librerías y dependencias, se recomienda utilizar un entorno virtual con conda. Recordando que dependiendo de la librería puede instalarse con pip install o conda install, se recomienda revisar la documentación de cada dependencia.
+3. Abrir el módulo anova y definir los parámetros necesarios (parametros de entrada, número de ejecuciones, carpeta objetivo de salida).
+4. Ejecutamos anova.py

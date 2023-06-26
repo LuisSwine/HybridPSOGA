@@ -32,14 +32,17 @@ def particulas_geneticas(tam_poblacion, dimensiones, intervalo, funcion, w, c1, 
     #Inicializamos nuestro contador de generaciones
     generacion = 0
     
+    #Creamos las listas donde guardaremos los datos por iteracion
     hitorial_mejores = []
     historial_peores = []
     historial_promedio = []
     
+    #Obtenemos los valores del peor, mejor y le promedio de la poblacion
     mejor = swarm.getBest()
     peor = swarm.getWorst()
     promedio = swarm.getProm()
     
+    #Añadimos los valores a sus respectivas listas
     hitorial_mejores.append(mejor.fitness)
     historial_peores.append(peor.fitness)
     historial_promedio.append(promedio)
@@ -129,10 +132,12 @@ def particulas_geneticas(tam_poblacion, dimensiones, intervalo, funcion, w, c1, 
         #SELECCIONAMOS A LOS SOBREVIVIENTES CON EL RESPECTIVO MODULO
         swarm.poblacion = ss.seleccion_por_extincion(swarm.poblacion, tam_poblacion)
         
+        #Al copletar la iteracion obtenemos los valores
         mejor = swarm.getBest()
         peor = swarm.getWorst()
         promedio = swarm.getProm()
         
+        #Añadimos los valores a sus respectivas listas antes de pasar a la siguiente iteración
         hitorial_mejores.append(mejor.fitness)
         historial_peores.append(peor.fitness)
         historial_promedio.append(promedio)
